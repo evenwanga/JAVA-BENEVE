@@ -19,6 +19,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.5.RELEASE</version>
+		<relativePath/>
 	</parent>
 	<dependencyManagement>
 		<dependencies>
@@ -108,4 +109,9 @@
 			<timezone>+8</timezone>
 		</developer>
 	</developers>
+	<modules>
+		<module>jv-server-cloud</module>
+		<module>jv-service-example</module>
+		<module>jv-service-example1</module>
+	</modules>
 </project>
