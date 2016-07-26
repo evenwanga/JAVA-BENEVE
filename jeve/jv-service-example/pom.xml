@@ -25,6 +25,12 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		
+		<!-- 信息查看组件 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 		<!-- 测试组件 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

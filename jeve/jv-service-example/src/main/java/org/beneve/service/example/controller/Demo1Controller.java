@@ -7,6 +7,8 @@
  */
 package org.beneve.service.example.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -29,10 +31,28 @@ public class Demo1Controller {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        ServiceInstance instance = client.getLocalServiceInstance();
+
+        List<String> servicesList = client.getServices();
+        for (String serviceId : servicesList) {
+            List<ServiceInstance> instanceList = client.getInstances(serviceId);
+            for (ServiceInstance instance : instanceList) {
+            System.out.println("#######################################");
+            System.out.println("ServiceId: " + instance.getServiceId());
+            System.out.println("Host: " + instance.getHost());
+            System.out.println("Port: " + instance.getPort());
+            System.out.println("Uri: " + instance.getUri());
+            System.out.println("Metadata: " + instance.getMetadata().toString());
+            System.out.println("isHttps: " + instance.isSecure());
+            }
+        }
+
+        ServiceInstance ThisInstance = client.getLocalServiceInstance();
+
         Integer r = a + b;
-        System.out.println("/add, host:" + instance.getHost() + ", service_id:"
-                + instance.getServiceId() + ", result:" + r);
+        System.out.println("/add, host:" + ThisInstance.getHost() + ", service_id:"
+                + ThisInstance.getServiceId() + ", result:" + r);
+
+        System.out.println("_____________________________________");
         return r;
     }
 }
