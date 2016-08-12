@@ -113,5 +113,10 @@
 		<module>jv-server-cloud</module>
 		<module>jv-service-example</module>
 		<module>jv-service-example1</module>
+		<module>jv-server-eureka</module>
+		<module>jv-service-Sample01</module>
+		<module>jv-service-sample01</module>
+		<module>jv-service-sample02</module>
+		<module>jv-server-config</module>
 	</modules>
 </project>
