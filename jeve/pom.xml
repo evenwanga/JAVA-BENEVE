@@ -118,5 +118,6 @@
 		<module>jv-service-sample01</module>
 		<module>jv-service-sample02</module>
 		<module>jv-server-config</module>
+		<module>jv-service-user</module>
 	</modules>
 </project>
